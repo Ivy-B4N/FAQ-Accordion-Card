@@ -1,0 +1,269 @@
+/* main */
+
+body {
+  margin: 0;
+  background: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%)) fixed;
+  font-family: "Kumbh", sans-serif;
+  font-size: 14px;
+}
+
+h1 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 2rem;
+  font-weight: 700;
+  color: hsl(238, 29%, 16%);
+}
+
+p {
+  color: hsl(237, 12%, 33%);
+}
+
+/* card */
+
+.container {
+  padding: 10% 18%;
+}
+
+.card {
+  margin: auto;
+  position: relative;
+  border-radius: 20px;
+  background-color: #fff;
+  background-image: url("./images/bg-pattern-desktop.svg");
+  background-repeat: no-repeat;
+  background-position: -605px -305px;
+  background-size: 1000px;
+  padding: 70px 100px 70px 0;
+  box-shadow: 0 15px 30px hsla(0, 0%, 0%, 0.3);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, auto);
+  grid-column-gap: 20px;
+}
+
+/* logo */
+
+.image {
+  grid-column: span 1;
+  grid-row: span 2;
+}
+
+.logo {
+  overflow: hidden;
+}
+
+.logo-mobile {
+  display: none;
+}
+
+.img1 {
+  position: relative;
+  right: 80px;
+}
+
+.box-img {
+  z-index: 1;
+  position: absolute;
+  top: 205px;
+  left: -90px;
+  transition: 0.3s;
+}
+
+.box-img:hover {
+  transform: translateX(-35px);
+  transition: 0.3s;
+}
+
+/* faq */
+
+.faq {
+  grid-column: 2 / 3;
+}
+
+/* accordion */
+
+.accordion {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+}
+
+.accordion-item {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid hsl(240, 5%, 91%);
+}
+
+.accordion-item:hover {
+  cursor: pointer;
+}
+
+.accordion-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+  .accordion-header img {
+    width: 10px;
+    height: 5px;
+  }
+
+  .accordion-header p {
+    margin: 20px 0;
+  }
+
+  .accordion-header p:hover {
+    color: hsl(14, 88%, 65%);
+  }
+
+.accordion-body {
+  height: 0;
+  overflow: hidden;
+}
+
+  .accordion-body p {
+    margin: 0 0 20px;
+    color: hsl(240, 6%, 50%);
+  }
+
+/* active state */
+
+.accordion-header.active p {
+  font-weight: 700;
+  color: hsl(238, 29%, 16%);
+  margin-bottom: 12px;
+}
+
+.accordion-header.active img {
+  transform: scaleY(-1);
+}
+
+.accordion-body.active {
+  height: auto;
+}
+
+/* responsive designs */
+
+@media (max-width: 1350px) {
+
+  .container {
+    padding: 10% 25%;
+  }
+
+  .card {
+    padding: 70px;
+    background-size: 40%;
+    background-position: 60px 35px;
+    grid-column-gap: 0;
+  }
+
+  h1 {
+    font-size: 4vw;
+  }
+
+  .image {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+
+  .faq {
+    grid-column: 2 / 3;
+    grid-row: span 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .accordion {
+    grid-column: span 2;
+    grid-row: 2 / 3;
+    margin-top: 60px;
+  }
+
+  .img1, .box-img {
+    display: none;
+  }
+
+  .logo-mobile {
+    display: block;
+    width: 100%;
+  }
+}
+
+@media (max-width: 840px) {
+
+  .container {
+    padding: 10%;
+  }
+
+  h1 {
+    font-size: 6vw;
+  }
+}
+
+@media (max-width: 540px) {
+
+  .container {
+    padding: 30% 5%;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .card {
+    position: relative;
+    padding: 150px 30px 60px;
+    background-image: url("./images/bg-pattern-mobile.svg");
+    background-size: 250px;
+    background-position: center top;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, auto);
+  }
+
+  .image {
+    position: relative;
+    grid-column: auto;
+    grid-row: span 1;
+  }
+
+  .logo-mobile {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    bottom: 75px;
+  }
+
+  .img2 {
+    width: 250px;
+  }
+
+  .faq {
+    grid-column: auto;
+    grid-row: 2 / 3;
+  }
+
+  .accordion {
+    grid-column: auto;
+    grid-row: 3 / 4;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 310px) {
+
+  .card {
+    background-size: 175px;
+    padding-top: 100px;
+  }
+
+  .logo-mobile {
+    bottom: 50px;
+  }
+
+  .img2 {
+    width: 175px;
+  }
+}
