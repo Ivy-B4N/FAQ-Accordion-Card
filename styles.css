@@ -204,6 +204,10 @@ p {
 }
 
 @media (max-width: 540px) {
+  
+  main {
+    padding-top: 5%;
+  }
 
   .container {
     padding: 30% 5%;
